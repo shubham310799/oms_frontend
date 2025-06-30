@@ -1,0 +1,14 @@
+<table class="order-summary-table">
+  <tr class="order-summary-header">
+    <th>OrderID</th>
+    <th>OrderStatus</th>
+    <th>OrderDate</th>
+    <th></th>
+  </tr>
+  <tr *ngFor = "let order of orderSummary.orders" class="order-summary-header">
+    <td>{{order.orderId}}</td>
+    <td>{{order.orderStatus | orderStatusLabel}}</td>
+    <td>{{order.orderCreateDt}}</td>
+    <button class="view-order-button">View</button>
+  </tr>
+</table>

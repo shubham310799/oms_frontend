@@ -1,0 +1,21 @@
+.order-summary-table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+.view-order-button{
+    background-color: yellow;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 5vw;
+    height: 2vw;
+}
+
+tr{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.view-order-button:hover{
+    cursor: pointer;
+}
