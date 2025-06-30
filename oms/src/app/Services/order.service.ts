@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { OrderSummaryResponse } from '../Common/OrderSummaryResponse';
+import { OrderSummary, OrderSummaryResponse } from '../Common/OrderSummaryResponse';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -15,5 +15,9 @@ export class OrderService {
 
   GetAllOrder():Observable<OrderSummaryResponse>{
     return this.client.get<OrderSummaryResponse>("https://localhost:44381/"+"order/store/"+"3562");
+  }
+
+  GetOrderSummaryById(orderId: string):Observable<OrderSummary>{
+    return this.client.get<OrderSummary>("https://localhost:44381/order/summary/"+orderId);
   }
 }

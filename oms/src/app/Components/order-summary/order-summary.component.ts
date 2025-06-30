@@ -21,6 +21,15 @@ export class OrderSummaryComponent implements OnInit, OnChanges{
   
   ngOnChanges(): void {
     console.log("On change order Summary");
+    this.orderService.GetOrderSummaryById(this.orderId).subscribe({
+      next: (data) =>{
+        this.orderSummary.orders = [data];
+      },
+      error: (err)=>{
+        console.log(err);
+        this.orderSummary.orders = [];
+      }
+    })
     this.orderSummary.orders = [{
       orderId: 123,
       orderStatus: orderStatus.Active,
