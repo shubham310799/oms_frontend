@@ -4,10 +4,11 @@ import { OrderSummaryResponse } from '../../Common/OrderSummaryResponse';
 import { NgFor } from '@angular/common';
 import { orderStatus } from '../../Common/OrderStatus';
 import { OrderStatusLabelPipe } from '../../CustomPipe/order-status-label.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-order-summary',
-  imports: [NgFor, OrderStatusLabelPipe],
+  imports: [NgFor, OrderStatusLabelPipe, RouterLink],
   templateUrl: './order-summary.component.html',
   styleUrl: './order-summary.component.css'
 })
@@ -49,6 +50,10 @@ export class OrderSummaryComponent implements OnInit, OnChanges{
       }
     });
     console.log(this.orderSummary);
+  }
+
+  HandleOrderView(index:number){
+    console.log(index);
   }
 
 }

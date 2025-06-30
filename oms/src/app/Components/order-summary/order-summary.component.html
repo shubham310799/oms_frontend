@@ -9,6 +9,11 @@
     <td>{{order.orderId}}</td>
     <td>{{order.orderStatus | orderStatusLabel}}</td>
     <td>{{order.orderCreateDt}}</td>
-    <button class="view-order-button">View</button>
+    <a (click)="HandleOrderView(order.orderId)" [routerLink]="['/order/detail/', order.orderId]">
+      <div class="view-order-button">
+        View
+      </div>
+    </a>
+    <!-- <button ">View</button> -->
   </tr>
 </table>
